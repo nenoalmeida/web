@@ -1,8 +1,7 @@
 defmodule Web.Router do
   use Web.Web, :router
-  resources "/posts", PostController
 
-  pipeline :browser do
+    pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
@@ -18,6 +17,7 @@ defmodule Web.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/posts", PostController, :new, :edit
   end
 
   # Other scopes may use custom stacks.

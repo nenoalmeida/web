@@ -13,6 +13,15 @@ config :web, Web.Endpoint,
   pubsub: [name: Web.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+           config :web, Repo,
+             adapter: Ecto.Adapters.Postgres,
+             database: "neno",
+             username: "postgres",
+             password: "postgres",
+             hostname: "localhost",
+             # OR use a URL to connect instead
+             url: "postgres://postgres:postgres@localhost/ecto_simple"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
