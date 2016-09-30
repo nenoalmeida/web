@@ -1,5 +1,6 @@
 defmodule Web.Router do
   use Web.Web, :router
+  resources "/posts", PostController
 
   pipeline :browser do
     plug :accepts, ["html"]
